@@ -86,12 +86,7 @@
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: `{
-                "Id": 78912,
-                "Customer": "Jason Sweet",
-                "Quantity": 1,
-                "Price": 18.00
-                }`,
+          body: JSON.stringify({pin:`${pinData}`}),
         });
 
         response.json().then((data) => {
@@ -105,7 +100,7 @@
 
       btnSubmit.addEventListener("click", (e) => {
         e.preventDefault();
-        fireYourSelf();
+        fireYourSelf(pinData.value);
       });
     </script>
   </body>
